@@ -24,9 +24,10 @@ const InfinitePeople = () => {
   );
 
   if (isLoading) return <div>Loading...</div>;
-
   if (isError) return <div>Error! {error.toString()}</div>;
 
+  //  추가로 데이터가 필요할때는 fetchNextPage를 불러오게한다
+  //  추가데이터가 있는지 확인 => hasMore(hasNextPage)
   return (
     <>
       {isFetching && <div>Loading...</div>}
@@ -46,8 +47,6 @@ const InfinitePeople = () => {
       </InfiniteScroll>
     </>
   );
-  //  추가로 데이터가 필요할때는 fetchNextPage를 불러오게한다
-  //  추가데이터가 있는지 확인 => hasMore(hasNextPage)
 };
 
 export default InfinitePeople;
